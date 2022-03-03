@@ -21,14 +21,14 @@
 
         <li>
             <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class="bx bx-category"></i>
+                <div class="parent-icon"><i class="fadeIn animated bx bx-cog"></i>
                 </div>
-                <div class="menu-title">Widgets</div>
+                <div class="menu-title">System Setting</div>
             </a>
             <ul>
-                <li> <a href="app-emailbox.html"><i class="bx bx-right-arrow-alt"></i>Email</a>
+                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>User Role</a>
                 </li>
-                <li> <a href="app-chat-box.html"><i class="bx bx-right-arrow-alt"></i>Chat Box</a>
+                <li> <a href="{{route('rolse.index')}}"><i class="bx bx-right-arrow-alt"></i>User Permission</a>
                 </li>
                
             </ul>

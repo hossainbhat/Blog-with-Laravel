@@ -19,6 +19,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
 	<link href="{{asset('assets/css/app.css')}}" rel="stylesheet">
 	<link href="{{asset('assets/css/icons.css')}}" rel="stylesheet">
+	{{-- data table  --}}
+	<link href="{{asset('assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
+	<link href="{{asset('assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet" />
+	<link href="{{asset('assets/plugins/select2/css/select2-bootstrap4.css')}}" rel="stylesheet" />
 	<!-- Theme Style CSS -->
 	<link rel="stylesheet" href="{{asset('assets/css/dark-theme.css')}}" />
 	<link rel="stylesheet" href="{{asset('assets/css/semi-dark.css')}}" />
@@ -57,9 +61,39 @@
 	<script src="{{asset('assets/plugins/metismenu/js/metisMenu.min.js')}}"></script>
 	<script src="{{asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
 	<!--app JS-->
+	{{-- data table --}}
+	<script src="{{asset('assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
+	
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="{{asset('assets/js/app.js')}}"></script>
 	<script src="{{asset('assets/js/custom.js')}}"></script>
+	<script>
+		$(document).ready(function() {
+			$('#example').DataTable();
+		  } );
+	</script>
+	<script>
+		$(document).ready(function() {
+			var table = $('#example2').DataTable( {
+				lengthChange: false,
+				buttons: [ 'copy', 'excel', 'pdf', 'print']
+			} );
+		 
+			table.buttons().container()
+				.appendTo( '#example2_wrapper .col-md-6:eq(0)' );
+		} );
+
+		function success_noti() {
+	Lobibox.notify('success', {
+		pauseDelayOnHover: true,
+		continueDelayOnInactiveTab: false,
+		position: 'top right',
+		icon: 'bx bx-check-circle',
+		msg: 'Lorem ipsum dolor sit amet hears farmer indemnity inherent.'
+	});
+}
+	</script>
 	@yield('js')
 </body>
 </html>

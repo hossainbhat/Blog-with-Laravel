@@ -29,6 +29,14 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
         Route::get('/change-password', [App\Http\Controllers\Admin\AdminController::class, 'changePassword'])->name('admin.changepassword');
         Route::post('/check-pwd', [App\Http\Controllers\Admin\AdminController::class, 'chkPassword'])->name('admin.check.password');
         Route::post('/update-pwd', [App\Http\Controllers\Admin\AdminController::class, 'updatePassword'])->name('admin.update.password');
+
+        //rolse
+        Route::get('/rolse', [App\Http\Controllers\Admin\RoleController::class, 'index'])->name('rolse.index');
+        Route::get('/rolse/create', [App\Http\Controllers\Admin\RoleController::class, 'create'])->name('rolse.create');
+        Route::post('/rolse', [App\Http\Controllers\Admin\RoleController::class, 'store'])->name('rolse.store');
+        Route::get('/rolse/{id}/edit', [App\Http\Controllers\Admin\RoleController::class, 'edit'])->name('rolse.edit');
+        Route::put('/rolse/{id}', [App\Http\Controllers\Admin\RoleController::class, 'update'])->name('rolse.update');
+        Route::get('delete-role/{id}', [App\Http\Controllers\Admin\RoleController::class, 'destroy'])->name('rolse.destroy');
     });    
 
 });
