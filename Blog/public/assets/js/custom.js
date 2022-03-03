@@ -18,22 +18,22 @@ $(document).ready(function(){
 			}
 		});
 	});
-	//admin status active or inactive
-	$(".updateAdminStatus").click(function(){
+
+	$(".updateUserStatus").click(function(){
 		var status = $(this).text();
 		var admin_id = $(this).attr("admin_id");
 
 		$.ajax({
 			type:"post",
-			url:"/admin/update-admin-status",
+			url:"/admin/update-user-status",
 			data:{status:status,admin_id:admin_id},
 			success:function(resp){
 				// alert(resp['status']);
 				// alert(resp['section_id']);
 				if (resp['status']==0) {
-					$("#admin-"+admin_id).html("<a class='updateAdminStatus' href='javascript:void(0)'>Inactive</a>");
+					$("#admin-"+admin_id).html("<a class='updateUserStatus' href='javascript:void(0)'>Inactive</a>");
 				}else if(resp['status']==1){
-					$("#admin-"+admin_id).html("<a class='updateAdminStatus'   href='javascript:void(0)'>Active</a>");
+					$("#admin-"+admin_id).html("<a class='updateUserStatus'   href='javascript:void(0)'>Active</a>");
 				}
 			},error:function(){
 				alert("Error");
@@ -49,7 +49,7 @@ $(document).ready(function(){
 
 		Swal.fire({
 		  title: 'Are you sure?',
-		  text: "You won't be able to revert this!",
+		  text: "You won't be delete this!",
 		  icon: 'warning',
 		  showCancelButton: true,
 		  confirmButtonColor: '#3085d6',

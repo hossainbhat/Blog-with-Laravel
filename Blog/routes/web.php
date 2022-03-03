@@ -30,13 +30,24 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
         Route::post('/check-pwd', [App\Http\Controllers\Admin\AdminController::class, 'chkPassword'])->name('admin.check.password');
         Route::post('/update-pwd', [App\Http\Controllers\Admin\AdminController::class, 'updatePassword'])->name('admin.update.password');
 
-        //rolse
+        //user permission
         Route::get('/rolse', [App\Http\Controllers\Admin\RoleController::class, 'index'])->name('rolse.index');
         Route::get('/rolse/create', [App\Http\Controllers\Admin\RoleController::class, 'create'])->name('rolse.create');
         Route::post('/rolse', [App\Http\Controllers\Admin\RoleController::class, 'store'])->name('rolse.store');
         Route::get('/rolse/{id}/edit', [App\Http\Controllers\Admin\RoleController::class, 'edit'])->name('rolse.edit');
         Route::put('/rolse/{id}', [App\Http\Controllers\Admin\RoleController::class, 'update'])->name('rolse.update');
         Route::get('delete-role/{id}', [App\Http\Controllers\Admin\RoleController::class, 'destroy'])->name('rolse.destroy');
+
+        
+        //user role
+        Route::get('/users', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
+        Route::get('/users/create', [App\Http\Controllers\Admin\UserController::class, 'create'])->name('users.create');
+        Route::post('/users', [App\Http\Controllers\Admin\UserController::class, 'store'])->name('users.store');
+        Route::get('/users/{id}/edit', [App\Http\Controllers\Admin\UserController::class, 'edit'])->name('users.edit');
+        Route::put('/users/{id}', [App\Http\Controllers\Admin\UserController::class, 'update'])->name('users.update');
+        Route::get('delete-user/{id}', [App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('users.destroy');
+        Route::post('/update-user-status', [App\Http\Controllers\Admin\UserController::class, 'updateUserStatus'])->name('users.status');
+
     });    
 
 });

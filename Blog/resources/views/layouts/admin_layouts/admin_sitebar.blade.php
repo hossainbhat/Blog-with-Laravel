@@ -26,7 +26,7 @@
                 <div class="menu-title">System Setting</div>
             </a>
             <ul>
-                <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>User Role</a>
+                <li> <a href="{{route('users.index')}}"><i class="bx bx-right-arrow-alt"></i>User Role</a>
                 </li>
                 <li> <a href="{{route('rolse.index')}}"><i class="bx bx-right-arrow-alt"></i>User Permission</a>
                 </li>

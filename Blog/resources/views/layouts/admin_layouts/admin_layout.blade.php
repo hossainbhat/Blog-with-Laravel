@@ -64,7 +64,7 @@
 	{{-- data table --}}
 	<script src="{{asset('assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
 	<script src="{{asset('assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
-	
+	<script src="{{asset('assets/plugins/select2/js/select2.min.js')}}"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="{{asset('assets/js/app.js')}}"></script>
 	<script src="{{asset('assets/js/custom.js')}}"></script>
