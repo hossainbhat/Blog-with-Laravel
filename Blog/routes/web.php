@@ -29,6 +29,7 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
         Route::get('/change-password', [App\Http\Controllers\Admin\AdminController::class, 'changePassword'])->name('admin.changepassword');
         Route::post('/check-pwd', [App\Http\Controllers\Admin\AdminController::class, 'chkPassword'])->name('admin.check.password');
         Route::post('/update-pwd', [App\Http\Controllers\Admin\AdminController::class, 'updatePassword'])->name('admin.update.password');
+        Route::get('/user/view/{id}', [App\Http\Controllers\Admin\AdminController::class, 'user_Profile'])->name('users.profile.view');
 
         //user permission
         Route::get('/rolse', [App\Http\Controllers\Admin\RoleController::class, 'index'])->name('rolse.index');
@@ -47,6 +48,7 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
         Route::put('/users/{id}', [App\Http\Controllers\Admin\UserController::class, 'update'])->name('users.update');
         Route::get('delete-user/{id}', [App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('users.destroy');
         Route::post('/update-user-status', [App\Http\Controllers\Admin\UserController::class, 'updateUserStatus'])->name('users.status');
+        Route::get('/register/users/list', [App\Http\Controllers\Admin\UserController::class, 'RegisterUser'])->name('users.register.list');
 
     });    
 

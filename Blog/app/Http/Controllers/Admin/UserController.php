@@ -9,9 +9,14 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
+    public function RegisterUser(){
+        $admins = User::where('is_admin',null)->get();
+        // dd($admins);
+        return view('admin.user.register_user', compact('admins'));
+    }
     public function index(){
        
-        $admins = User::all();
+        $admins = User::where('is_admin',1)->get();
         return view('admin.user.index', compact('admins'));
     }
 
@@ -45,7 +50,7 @@ class UserController extends Controller
             if ($request->roles) {
                 $admin->assignRole($request->roles);
             }
-    
+           
             session()->flash('success', 'Roel has been created !!');
             return redirect('admin/users');
     }
@@ -110,4 +115,6 @@ class UserController extends Controller
             return response()->json(['status'=>$status,'admin_id'=>$data['admin_id']]);
         }
     }
+
+
 }

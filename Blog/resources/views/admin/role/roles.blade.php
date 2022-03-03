@@ -4,7 +4,7 @@
     <div class="page-content">
        
         <h6 class="mb-0 text-uppercase">Permission List</h6>
-        <a href="{{route('rolse.create')}}"  class="btn btn-outline-success btn-sm " style="float: right;margin-top:-30px;">Create Parmission<i class="fadeIn animated bx bx-plus-circle"></i></a>
+        <a href="{{route('rolse.create')}}"  class="btn btn-outline-success btn-sm " style="float: right;margin-top:-20px;">Create Parmission<i class="fadeIn animated bx bx-plus-circle"></i></a>
         <hr>
         <div class="card">
             <div class="card-body">
@@ -36,7 +36,6 @@
                                     <tr>
 										<td>{{$key+1}}</td>
 										<td>{{$role['name']}}</td>
-                                        
 										<td>
 											@foreach(@$role->permissions as $perm)
                                             <span class="badge bg-primary">{{ $perm->name }}</span>

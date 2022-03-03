@@ -118,6 +118,9 @@ class AdminController extends Controller
       }
     }
 
-
+    public function user_Profile($id){
+        $user = User::find($id);
+        return view('admin.profile.view',compact('user'));
+    }
 
 }

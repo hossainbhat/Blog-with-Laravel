@@ -30,6 +30,8 @@
                 </li>
                 <li> <a href="{{route('rolse.index')}}"><i class="bx bx-right-arrow-alt"></i>User Permission</a>
                 </li>
+                <li> <a href="{{route('users.register.list')}}"><i class="bx bx-right-arrow-alt"></i>Register User</a>
+                </li>
                
             </ul>
         </li>

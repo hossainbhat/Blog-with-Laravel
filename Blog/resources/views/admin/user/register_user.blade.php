@@ -3,8 +3,7 @@
 <div class="page-wrapper">
     <div class="page-content">
        
-        <h6 class="mb-0 text-uppercase">User Role</h6>
-        <a style="float: right;margin-top:-20px;" href="{{ route('users.create') }}"><button type="button" class="btn btn-outline-success btn-sm">Create User <i class="lni lni-circle-plus"></i></button></a>
+        <h6 class="mb-0 text-uppercase">Register User List</h6>
         <hr>
         <div class="card mt-10">
             <div class="card-body">
@@ -20,7 +19,6 @@
                                         <th>Sl</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>Roles</th>
                                         <th>Status</th>
                                         <th>Action</th>         
                                     </tr>
@@ -33,17 +31,13 @@
                                             <td><a href="{{route('users.profile.view',$admin->id)}}">{{ $admin->name }}</a></td>
                                             <td>{{ $admin->email }}</td>
                                             <td>
-                                                @foreach ($admin->roles as $role)
-                                                    <span class="badge bg-primary"> {{ $role->name }}</span>
-                                                @endforeach
-                                            </td>
-                                            <td>
                                                 @if($admin->status ==1)
                                                     <a class="updateUserStatus" id="admin-{{$admin->id}}" admin_id="{{$admin->id}}" href="javascript:void(0)">Active</a>  
                                                 @else
                                                     <a class="updateUserStatus" id="admin-{{$admin->id}}" admin_id="{{$admin->id}}" href="javascript:void(0)">Inactive</a>  
                                                 @endif
                                             </td>
+                                           
                                             <td>
                                             
                                                 <a href="{{ route('users.edit', $admin->id) }}"><i class="btn btn-outline-success btn-sm fadeIn animated bx bx-comment-edit"></i></a>
